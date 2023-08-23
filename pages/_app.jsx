@@ -1,6 +1,6 @@
-import "@/styles/globals.css";
-import Layout from "@/components/Layout/Layout";
-import Transition from "@/components/Transition/Transition";
+import "../styles/globals.css";
+import Layout from "../components/Layout/Layout";
+import Transition from "../components/Transition/Transition";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 

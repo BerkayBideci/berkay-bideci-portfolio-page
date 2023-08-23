@@ -1,7 +1,7 @@
 import Image from "next/image";
-import ParticlesContainer from "@/components/ParticlesContainer/ParticlesContainer";
-import ProjectsBtn from "@/components/ProjectsBtn/ProjectsBtn";
-import Avatar from "@/components/Avatar/Avatar";
+import ParticlesContainer from "../components/ParticlesContainer/ParticlesContainer";
+import ProjectsBtn from "../components/ProjectsBtn/ProjectsBtn";
+import Avatar from "../components/Avatar/Avatar";
 import { easeInOut, motion } from "framer-motion";
 import { fadeIn } from "../variants";
 
