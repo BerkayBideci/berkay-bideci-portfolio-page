@@ -15,7 +15,7 @@ export default function Home() {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
-                        className="h1"
+                        className="h1 xl:max-w-xl"
                     >
                         Transforming Vision <br /> Into{" "}
                         <span className="text-accent">Digital De Facto</span>
@@ -25,11 +25,9 @@ export default function Home() {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
-                        className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
+                        className="max-w-sm md:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-justify text-sm md:text-base"
                     >
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Porro sed, et placeat illum quo quos qui repellat dolore
-                        necessitatibus minima!
+                        Hello, I'm <strong className="font-bold">Berkay</strong>, a <strong className="font-bold">Front-End Web Developer</strong> with a background in game design, translation, and editing. Proficient in a diverse range of technologies, including <strong className="font-bold">HTML, CSS, JavaScript, Tailwind CSS, Bootstrap, React.js, Next.js, and Redux Toolkit</strong>. Possess strong attention to detail, and a dedication to providing high-quality web development solutions.
                     </motion.p>
                     <div className="flex justify-center xl:hidden relative">
                         <ProjectsBtn />
@@ -46,7 +44,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="w-[1200px] h-full absolute right-0 bottom-0">
-                <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0 opacity-40"></div>
+                <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0 opacity-40 animate-pulse"></div>
                 <ParticlesContainer />
                 <motion.div
                     variants={fadeIn("up", 0.5)}
