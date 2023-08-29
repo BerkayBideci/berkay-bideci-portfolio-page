@@ -36,7 +36,7 @@
   }
 
   p {
-    @apply leading-[1.8] text-white/60 font-light;
+    @apply leading-[1.8] text-black/60 dark:text-white/60 font-light;
   }
 
   .btn,
