@@ -6,8 +6,8 @@ import { fadeIn } from "../variants";
 
 export default function Home() {
     return (
-        <div className="bg-primaryLight dark:bg-primary/60 h-full">
-            <div className="w-full h-full dark:bg-gradient-to-r dark:from-primary/10 dark:via-black/30 dark:to-black/10 xl:bg-gradient-to-r from-primaryLight  from-20% via-primaryLight/10 to-white">
+        <div className="bg-primaryLight xl:bg-primaryLight/10 dark:bg-primary/60 h-full">
+            <div className="w-full h-full dark:bg-gradient-to-r dark:from-primary/10 dark:via-black/30 dark:to-black/10 xl:bg-gradient-to-r from-primaryLight from-[37%] via-primaryLight/60 to-primaryLight/10">
                 <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
                     <motion.h1
                         variants={fadeIn("down", 0.2)}
@@ -43,7 +43,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="w-[1200px] h-full absolute right-0 bottom-0">
-                <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-exclusion dark:mix-blend-color-dodge translate-z-0 opacity-40 animate-pulse"></div>
+                <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-exclusion saturate-[.30] contrast-200 hue-rotate-0 dark:filter-none dark:mix-blend-color-dodge translate-z-0 opacity-40 animate-pulse"></div>
                 <ParticlesContainer />
                 <motion.div
                     variants={fadeIn("up", 0.5)}

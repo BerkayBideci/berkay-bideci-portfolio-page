@@ -1,12 +1,14 @@
 import { Particles } from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import { useCallback } from "react";
+import { useContext } from "react";
+import ThemeContext from "../../store/ThemeContext";
 
 const ParticlesContainer = () => {
     const particlesInit = useCallback(async (engine) => {
         await loadFull(engine);
     }, []);
-
+    const themeContext = useContext(ThemeContext);
     const particlesLoaded = useCallback(async () => { }, [])
 
     return (
@@ -47,10 +49,10 @@ const ParticlesContainer = () => {
                 },
                 particles: {
                     color: {
-                        value: "#e68e2e"
+                        value: themeContext.isDarkTheme ? "#e68e2e" : "#7A3060"
                     },
                     links: {
-                        color: "#f5d393",
+                        color: themeContext.isDarkTheme ? "#f5d393" : "#6A2A50",
                         distance: 150,
                         enable: true,
                         opacity: 0.5,

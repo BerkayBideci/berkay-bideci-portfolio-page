@@ -6,7 +6,7 @@ import { fadeIn } from "../../variants"
 
 const Projects = () => {
     return (
-        <div className="h-full bg-primary/30 py-36 flex items-center">
+        <div className="h-full bg-primaryLight/60 dark:bg-primary/30 py-36 flex items-center">
             <Circles />
             <div className="container mx-auto">
                 <div className="flex flex-col xl:flex-row gap-x-8">
@@ -18,7 +18,7 @@ const Projects = () => {
                             exit="hidden"
                             className="h2 xl:mt-12">
                             My projects&nbsp;
-                            <span className="text-accent">
+                            <span className="dark:text-accent text-accentLight">
                                 .
                             </span>
                         </motion.h2>

@@ -24,8 +24,8 @@ const config: Config = {
                 primary: "#131424",
                 secondary: "#393A47",
                 accent: "#F13024",
-                primaryLight: "#758EB4",
-                secondaryLight: "#B3DEFB",
+                primaryLight: "#838EAF",
+                secondaryLight: "#AAB4C2",
                 accentLight: "#CDDC39",
             },
             backgroundImage: {
