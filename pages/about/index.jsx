@@ -8,9 +8,11 @@ import {
     SiBootstrap,
     SiFramer,
     SiRedux,
-    SiFirebase
+    SiFirebase,
+    SiMongodb,
+    SiGit,
 } from "react-icons/si";
-import { FaLightbulb, FaSearch, FaUsers, FaTasks, FaSyncAlt } from 'react-icons/fa';
+import { FaLightbulb, FaSearch, FaUsers, FaTasks, FaSyncAlt, FaBrain } from 'react-icons/fa';
 import { BsDownload } from "react-icons/bs"
 import Avatar from "../../components/Avatar/Avatar"
 import Circles from "../../components/Circles/Circles"
@@ -48,11 +50,11 @@ const aboutData = [
                         icon: <SiJavascript />,
                     },
                     {
-                        name: "React.js",
+                        name: "React",
                         icon: <SiReact />,
                     },
                     {
-                        name: "Next.js",
+                        name: "Next",
                         icon: <SiNextdotjs />,
                     },
                     {
@@ -75,6 +77,14 @@ const aboutData = [
                         name: "Firebase",
                         icon: <SiFirebase />
                     },
+                    {
+                        name: "MongoDB",
+                        icon: <SiMongodb />
+                    },
+                    {
+                        name: "Git",
+                        icon: <SiGit />
+                    },
                 ],
             },
             {
@@ -85,7 +95,7 @@ const aboutData = [
                         icon: <FaLightbulb />,
                     },
                     {
-                        name: "Detail-oriented",
+                        name: "Attention to detail",
                         icon: <FaSearch />,
                     },
                     {
@@ -99,6 +109,10 @@ const aboutData = [
                     {
                         name: "Adaptability",
                         icon: <FaSyncAlt />,
+                    },
+                    {
+                        name: "Critical Thinking",
+                        icon: <FaBrain />,
                     }
                 ]
             }
@@ -259,7 +273,7 @@ const About = () => {
                         {aboutData[index].info.map((item, itemIndex) => {
                             if (item.title === "") {
                                 return (
-                                    <a key={itemIndex} href="Berkay_Bideci_CV.pdf" download="Berkay_Bideci_CV.pdf" target="_blank" className="btn rounded-full border border-black/60 dark:border-white/50 max-w-[250px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accentLight dark:hover:border-accent group">
+                                    <a key={itemIndex} href="Berkay_Bideci_CV.pdf" download target="_blank" className="btn rounded-full border border-black/60 dark:border-white/50 max-w-[250px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accentLight dark:hover:border-accent group">
                                         <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
                                             Download Resume
                                         </span>
@@ -287,12 +301,12 @@ const About = () => {
                                                 )
                                             })}
                                         </div>
-                                        <div className="flex flex-wrap gap-y-4 gap-x-2 max-w-md">
+                                        <div className="flex flex-wrap gap-y-4 gap-x-2 max-w-xs justify-end">
                                             {item.notions?.map((notion, itemIndex) => {
                                                 return (
                                                     <div
                                                         key={itemIndex}
-                                                        className="text-black dark:text-white flex flex-col justify-center items-center w-[7rem]">
+                                                        className="text-black dark:text-white flex flex-col justify-center items-center w-36">
                                                         <div className="text-2xl mb-1 hover:text-accentLight dark:hover:text-accent">{notion.icon}</div>
                                                         <div className="text-sm">{notion.name}</div>
                                                     </div>
