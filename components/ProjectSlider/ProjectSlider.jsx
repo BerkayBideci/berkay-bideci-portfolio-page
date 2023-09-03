@@ -1,9 +1,8 @@
 
-import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/css"
-import "swiper/css/free-mode"
-import "swiper/css/pagination"
-import { Pagination } from "swiper"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import Image from "next/image";
 
 const projectSlides = {
@@ -64,19 +63,16 @@ const ProjectSlider = () => {
         <Swiper
             spaceBetween={10}
             slidesPerView={1}
-            slidesPerColumn={1}
-            slidesPerGroup={2}
-            slidesPerColumnFill="row"
+            slidesPerGroup={1}
+            loop
             breakpoints={{
                 640: {
                     slidesPerView: 2,
-                    slidesPerColumn: 1,
-                    slidesPerColumnFill: 'row'
+                    slidesPerGroup: 2
                 },
                 1024: {
                     slidesPerView: 2,
-                    slidesPerColumn: 2,
-                    slidesPerColumnFill: 'row'
+                    slidesPerGroup: 2
                 }
             }}
             pagination={{

@@ -6,6 +6,10 @@
   transform: translateZ(0px);
 }
 
+.swiper > .swiper-pagination {
+  @apply static
+}
+
 .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
   @apply dark:bg-accent bg-accentLight
