@@ -18,6 +18,10 @@
   @apply dark:text-accent text-accentLight
 }
 
+.swiper {
+  @apply max-w-sm sm:max-w-max
+}
+
 @layer base {
   body {
     @apply bg-secondary overflow-hidden leading-relaxed;
