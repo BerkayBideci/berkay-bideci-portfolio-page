@@ -36,7 +36,7 @@ const Projects = () => {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
-                        className="xl:max-w-[65%]">
+                        className="flex justify-center items-center xl:max-w-[65%]">
                         <ProjectSlider />
                     </motion.div>
                 </div>

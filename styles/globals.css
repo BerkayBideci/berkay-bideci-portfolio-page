@@ -53,15 +53,15 @@
   }
 
   .input {
-    @apply w-full h-[52px] rounded-lg pl-6 capitalize;
+    @apply w-full h-[52px] rounded-lg pl-4 placeholder:capitalize;
   }
 
   .input,
   .textarea {
-    @apply bg-transparent outline-none focus:ring-1 focus:ring-accent border border-white/20 placeholder:text-white/30 placeholder:font-light;
+    @apply bg-transparent outline-none focus:border-accentLight dark:focus:border-accent border border-black/60 dark:border-white/20 placeholder:text-black/60 dark:placeholder:text-white/30 placeholder:font-normal;
   }
 
   .textarea {
-    @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
+    @apply w-full h-[180px] p-4 placeholder:capitalize rounded-lg resize-none;
   }
 }
