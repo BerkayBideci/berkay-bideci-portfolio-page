@@ -30,7 +30,7 @@ const projectSlides = {
                     demo: "https://capstone-team-3-final.vercel.app/en",
                     code: "https://github.com/202303-PRM-TR-FEW/capstone-template-team-3",
                     description: "Givingly is a robust crowdfunding platform that connects passionate individuals and innovative projects with a community of potential backers.",
-                    technologies: [<SiNextdotjs />, <SiReact />, <SiTailwindcss />, <SiFirebase />, <SiRedux />, <SiI18Next />]
+                    technologies: ["Next.js", "React.js", "Tailwind CSS", "Firebase", "Redux", "I18Next"]
                 },
                 {
                     title: "I Like To Movie Movie",
@@ -38,7 +38,7 @@ const projectSlides = {
                     demo: "https://202303-prm-tr-few.github.io/movie-project-aybike-berkay-medetcan/",
                     code: "https://github.com/BerkayBideci/movie-project",
                     description: "I Like To Movie Movie serves as a movie database, where it shows movies, their casts, ratings, trailers, related movies, genres, and additional details of them.",
-                    technologies: [<SiHtml5 />, <SiCss3 />, <SiJavascript />, <SiTailwindcss />]
+                    technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS"]
                 },
                 {
                     title: "Promptopia",
@@ -46,7 +46,7 @@ const projectSlides = {
                     demo: "https://promptopia-bf9v1fkpa-berkaybideci.vercel.app/",
                     code: "https://github.com/BerkayBideci/promptopia",
                     description: "Promptopia is an open-source AI prompting tool for modern world to discover, create, and share creative prompts.",
-                    technologies: [<SiNextdotjs />, <SiReact />, <SiTailwindcss />, <SiCss3 />, <SiMongodb />]
+                    technologies: ["Next.js", "React.js", "Tailwind CSS", "CSS", "MongoDB"]
                 },
                 {
                     title: "All Doggs Go To Heaven",
@@ -54,7 +54,7 @@ const projectSlides = {
                     demo: "https://berkaybideci.github.io/fav-artist-landing-page/",
                     code: "https://github.com/BerkayBideci/fav-artist-landing-page",
                     description: "All Doggs Go To Heaven serves as a landing page for my favorite artist, Snoop Doggy Dogg. The page encapsulates the essence of Snoop's unique vibe.",
-                    technologies: [<SiHtml5 />, <SiCss3 />, <SiJavascript />, <SiTailwindcss />]
+                    technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS"]
                 },
             ],
         },
@@ -66,7 +66,7 @@ const projectSlides = {
                     demo: "https://meme-generator-seven-rho.vercel.app/",
                     code: "https://github.com/BerkayBideci/meme-generator",
                     description: "A web-based meme generator that empowers users to sprinkle witty captions onto iconic meme templates and then effortlessly archive them on their devices.",
-                    technologies: [<SiNextdotjs />, <SiReact />, <SiTailwindcss />]
+                    technologies: ["Next.js", "React.js", "Tailwind CSS"]
                 },
                 {
                     title: "Nominator",
@@ -74,7 +74,7 @@ const projectSlides = {
                     demo: "https://omdb-exercise.vercel.app/",
                     code: "https://github.com/BerkayBideci/omdb-exercise",
                     description: "Nominator allows users to nominate their top five cinematic masterpieces and reveals the winner, harnessing the extensive database of the OMDb API.",
-                    technologies: [<SiNextdotjs />, <SiReact />, <SiTailwindcss />]
+                    technologies: ["Next.js", "React.js", "Tailwind CSS"]
                 },
             ],
         },
@@ -82,6 +82,39 @@ const projectSlides = {
 };
 
 const ProjectSlider = () => {
+    const getTechIcon = (techName) => {
+        switch (techName) {
+            case 'Next.js':
+                return <SiNextdotjs />;
+            case 'React.js':
+                return <SiReact />;
+            case 'Tailwind CSS':
+                return <SiTailwindcss />;
+            case 'Firebase':
+                return <SiFirebase />;
+            case 'Redux':
+                return <SiRedux />;
+            case 'I18Next':
+                return <SiI18Next />;
+            case 'HTML':
+                return <SiHtml5 />;
+            case 'CSS':
+                return <SiCss3 />;
+            case 'JavaScript':
+                return <SiJavascript />;
+            case 'Bootstrap':
+                return <SiBootstrap />;
+            case 'Framer':
+                return <SiFramer />;
+            case 'MongoDB':
+                return <SiMongodb />;
+            case 'Git':
+                return <SiGit />;
+            default:
+                return null;
+        }
+    }
+
     return (
         <Swiper
             spaceBetween={10}
@@ -142,9 +175,14 @@ const ProjectSlider = () => {
                         <div className="flex flex-col justify-center items-center">
                             <p className='text-center p-4 text-xs xl:text-base'>{image.description}</p>
                             <div className='flex justify-center items-center gap-x-4 text-2xl'>
-                                {image.technologies?.map((tech, index) => (
-                                    <div key={index} className='hover:text-accentLight dark:hover:text-accent'>{tech}</div>
-                                ))}
+                                {image.technologies?.map((techName, index) => {
+                                    const techIcon = getTechIcon(techName);
+                                    return (
+                                        <div key={`${image.title}-tech-${index}`} className='hover:text-accentLight dark:hover:text-accent'>
+                                            {techIcon}
+                                        </div>
+                                    );
+                                })}
                             </div>
                         </div>
                     </SwiperSlide>

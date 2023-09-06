@@ -26,7 +26,7 @@ export default function Home() {
                         exit="hidden"
                         className="max-w-sm md:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-justify text-sm md:text-base z-10"
                     >
-                        Hello, I'm <strong className="font-bold">Berkay</strong>, a <strong className="font-bold">Front-End Web Developer</strong> with a background in game design, translation, and editing. Proficient in a diverse range of technologies, including <strong className="font-bold">HTML, CSS, JavaScript, Tailwind CSS, Bootstrap, React.js, Next.js, and Redux Toolkit</strong>. Possess strong attention to detail, and a dedication to providing high-quality web development solutions.
+                        Hello, I&apos;m <strong className="font-bold">Berkay</strong>, a <strong className="font-bold">Front-End Web Developer</strong> with a background in game design, translation, and editing. Proficient in a diverse range of technologies, including <strong className="font-bold">HTML, CSS, JavaScript, Tailwind CSS, Bootstrap, React.js, Next.js, and Redux Toolkit</strong>. Possess strong attention to detail, and a dedication to providing high-quality web development solutions.
                     </motion.p>
                     <div className="flex justify-center xl:hidden relative">
                         <ProjectsBtn />
