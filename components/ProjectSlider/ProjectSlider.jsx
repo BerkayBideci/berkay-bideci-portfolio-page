@@ -4,6 +4,21 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Image from "next/image";
+import {
+    SiHtml5,
+    SiCss3,
+    SiJavascript,
+    SiReact,
+    SiNextdotjs,
+    SiTailwindcss,
+    SiBootstrap,
+    SiFramer,
+    SiRedux,
+    SiFirebase,
+    SiMongodb,
+    SiGit,
+    SiI18Next
+} from "react-icons/si";
 
 const projectSlides = {
     slides: [
@@ -11,47 +26,55 @@ const projectSlides = {
             images: [
                 {
                     title: "Givingly",
-                    path: "/thumb1.jpg",
+                    path: "/Givingly.png",
                     demo: "https://capstone-team-3-final.vercel.app/en",
                     code: "https://github.com/202303-PRM-TR-FEW/capstone-template-team-3",
+                    description: "Givingly is a robust crowdfunding platform that connects passionate individuals and innovative projects with a community of potential backers.",
+                    technologies: [<SiNextdotjs />, <SiReact />, <SiTailwindcss />, <SiFirebase />, <SiRedux />, <SiI18Next />]
                 },
                 {
                     title: "I Like To Movie Movie",
-                    path: "/thumb2.jpg",
+                    path: "/ILikeToMovieMovie.png",
                     demo: "https://202303-prm-tr-few.github.io/movie-project-aybike-berkay-medetcan/",
                     code: "https://github.com/BerkayBideci/movie-project",
+                    description: "I Like To Movie Movie serves as a movie database, where it shows movies, their casts, ratings, trailers, related movies, genres, and additional details of them.",
+                    technologies: [<SiHtml5 />, <SiCss3 />, <SiJavascript />, <SiTailwindcss />]
                 },
                 {
                     title: "Promptopia",
-                    path: "/thumb3.jpg",
+                    path: "/Promptopia.png",
                     demo: "https://promptopia-bf9v1fkpa-berkaybideci.vercel.app/",
                     code: "https://github.com/BerkayBideci/promptopia",
+                    description: "Promptopia is an open-source AI prompting tool for modern world to discover, create, and share creative prompts.",
+                    technologies: [<SiNextdotjs />, <SiReact />, <SiTailwindcss />, <SiCss3 />, <SiMongodb />]
                 },
                 {
                     title: "All Doggs Go To Heaven",
-                    path: "/thumb4.jpg",
+                    path: "/AllDoggsGoToHeaven.png",
                     demo: "https://berkaybideci.github.io/fav-artist-landing-page/",
                     code: "https://github.com/BerkayBideci/fav-artist-landing-page",
+                    description: "All Doggs Go To Heaven serves as a landing page for my favorite artist, Snoop Doggy Dogg. The page encapsulates the essence of Snoop's unique vibe.",
+                    technologies: [<SiHtml5 />, <SiCss3 />, <SiJavascript />, <SiTailwindcss />]
                 },
             ],
         },
         {
             images: [
                 {
-                    title: "title",
-                    path: "/thumb4.jpg",
+                    title: "Meme Generator",
+                    path: "/MemeGenerator.png",
+                    demo: "https://meme-generator-seven-rho.vercel.app/",
+                    code: "https://github.com/BerkayBideci/meme-generator",
+                    description: "A web-based meme generator that empowers users to sprinkle witty captions onto iconic meme templates and then effortlessly archive them on their devices.",
+                    technologies: [<SiNextdotjs />, <SiReact />, <SiTailwindcss />]
                 },
                 {
-                    title: "title",
-                    path: "/thumb1.jpg",
-                },
-                {
-                    title: "title",
-                    path: "/thumb2.jpg",
-                },
-                {
-                    title: "title",
-                    path: "/thumb3.jpg",
+                    title: "Nominator",
+                    path: "/Nominator.png",
+                    demo: "https://omdb-exercise.vercel.app/",
+                    code: "https://github.com/BerkayBideci/omdb-exercise",
+                    description: "Nominator allows users to nominate their top five cinematic masterpieces and reveals the winner, harnessing the extensive database of the OMDb API.",
+                    technologies: [<SiNextdotjs />, <SiReact />, <SiTailwindcss />]
                 },
             ],
         },
@@ -114,6 +137,14 @@ const ProjectSlider = () => {
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div className="flex flex-col justify-center items-center">
+                            <p className='text-center p-4 text-xs xl:text-base'>{image.description}</p>
+                            <div className='flex justify-center items-center gap-x-4 text-2xl'>
+                                {image.technologies?.map((tech, index) => (
+                                    <div key={index} className='hover:text-accentLight dark:hover:text-accent'>{tech}</div>
+                                ))}
                             </div>
                         </div>
                     </SwiperSlide>

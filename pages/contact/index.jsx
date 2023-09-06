@@ -1,15 +1,33 @@
 import Circles from "../../components/Circles/Circles"
 import Bulb from "../../components/Bulb/Bulb"
-import { BsArrowRight } from "react-icons/bs"
+import { BsCaretUpFill, BsSend } from "react-icons/bs"
 import { motion } from "framer-motion"
 import { fadeIn } from "../../variants"
-import { useState } from "react"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useForm } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
+
+const fullNameRegex = /^[a-zA-Z]+(?:-[a-zA-Z]+)*(?:\s[a-zA-Z]+(?:-[a-zA-Z]+)*)*$/
+const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+const schema = yup.object().shape({
+    fullName: yup.string().required("Field is required.").matches(fullNameRegex, "Field is invalid."),
+    email: yup.string().required("Field is required.").matches(emailRegex, "Field is invalid."),
+    subject: yup.string().required("Field is required."),
+    message: yup.string().required("Field is required."),
+})
 
 const Contact = () => {
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [subject, setSubject] = useState('')
-    const [message, setMessage] = useState('')
+    const { register, handleSubmit, formState: { errors }, reset } = useForm({
+        resolver: yupResolver(schema),
+        defaultValues: {
+            fullName: "",
+            email: "",
+            subject: "",
+            message: "",
+        }
+    });
 
     const sendEmail = async (name, email, subject, message) => {
         const response = await fetch('/api/contact', {
@@ -19,25 +37,29 @@ const Contact = () => {
             },
             body: JSON.stringify({ name, email, subject, message }),
         });
-
+        if (response.ok) {
+            toast.success("Submitted successfully!"), { toastId: "form-submit-success" }
+            reset()
+        }
         if (!response.ok) {
+            toast.error("Failed to connect!"), { toastId: "email-submit-fail" }
             throw new Error('Failed to send email');
         }
 
         return response.json();
     }
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    const onSubmit = async (data) => {
+        const { fullName, email, subject, message } = data
         try {
-            await sendEmail(name, email, subject, message);
+            await sendEmail(fullName, email, subject, message);
         } catch (error) {
-            console.log(error);
+            toast.error("Failed to submit!"), { toastId: "form-submit-fail" }
         }
     }
 
     return (
-        <div className="h-full bg-primaryLight/60 dark:bg-primary/30">
+        <div className="h-full dark:bg-primary/30 bg-gradient-to-r dark:bg-none from-primaryLight via-primaryLight/60 to-primaryLight/10 bg-primaryLight/60">
             <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
                 <div className="flex flex-col w-full max-w-[700px]">
                     <Circles />
@@ -46,7 +68,7 @@ const Contact = () => {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
-                        className="h2 text-center mb-6">
+                        className="h2 text-center mb-2 xl:mb-6">
                         Contact me<span className="text-accentLight dark:text-accent">.</span>
                     </motion.h2>
                     <motion.p
@@ -54,7 +76,7 @@ const Contact = () => {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
-                        className="text-center mb-6">
+                        className="text-center text-sm md:text-base mb-4 xl:mb-6">
                         Contact me directly at <a href="mailto:berkaybideci@gmail.com" className="underline font-medium">berkaybideci@gmail.com</a> or through this form.
                     </motion.p>
                     <motion.form
@@ -62,21 +84,64 @@ const Contact = () => {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
-                        className="flex-1 flex flex-col gap-6 w-full mx-auto"
-                        onSubmit={handleSubmit}>
-                        <div className="flex gap-x-6 w-full">
-                            <input type="text" name="name" placeholder="name" className="input" value={name} onChange={(e) => setName(e.target.value)} />
-                            <input type="email" name="email" placeholder="email" className="input" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        className="flex-1 flex flex-col gap-2 xl:gap-6 w-full mx-auto"
+                        onSubmit={handleSubmit(onSubmit)}>
+                        <div className="flex gap-x-2 xl:gap-x-6 w-full">
+                            <div className="w-1/2">
+                                <input {...register("fullName")} type="text" name="fullName" placeholder="Full name" className="input" />
+                                {errors.fullName?.message ?
+                                    <div className="flex justify-end items-center gap-x-1 text-sm text-end italic font-bold mt-2 text-accentLight dark:text-accent">
+                                        <BsCaretUpFill />
+                                        <span className="">{errors.fullName.message}</span>
+                                    </div>
+                                    : null}
+                            </div>
+                            <div className="w-1/2">
+                                <input {...register("email")} type="text" name="email" placeholder="email" className="input" />
+                                {errors.email?.message ?
+                                    <div className="flex justify-end items-center gap-x-1 text-sm text-end italic font-bold mt-2 text-accentLight dark:text-accent">
+                                        <BsCaretUpFill />
+                                        <span className="">{errors.email.message}</span>
+                                    </div>
+                                    : null}
+                            </div>
                         </div>
-                        <input type="text" name="subject" placeholder="subject" className="input" value={subject} onChange={(e) => setSubject(e.target.value)} />
-                        <textarea name="message" placeholder="message" className="textarea" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+                        <div>
+                            <input {...register("subject")} type="text" name="subject" placeholder="subject" className="input" />
+                            {errors.subject?.message ?
+                                <div className="flex justify-end items-center gap-x-1 text-sm text-end italic font-bold mt-2 text-accentLight dark:text-accent">
+                                    <BsCaretUpFill />
+                                    <span className="">{errors.subject.message}</span>
+                                </div>
+                                : null}
+                        </div>
+                        <div>
+                            <textarea {...register("message")} name="message" placeholder="message" className="textarea"></textarea>
+                            {errors.message?.message ?
+                                <div className="flex justify-end items-center gap-x-1 text-sm text-end italic font-bold text-accentLight dark:text-accent">
+                                    <BsCaretUpFill />
+                                    <span className="">{errors.message.message}</span>
+                                </div>
+                                : null}
+                        </div>
                         <button type="submit" className="btn rounded-full border border-black/60 dark:border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accentLight dark:hover:border-accent group">
                             <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
                                 Submit
                             </span>
-                            <BsArrowRight className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
+                            <BsSend className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px]" />
                         </button>
                     </motion.form>
+                    <ToastContainer
+                        position="bottom-right"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="colored" />
                     <Bulb />
                 </div>
             </div>

@@ -170,14 +170,14 @@ const aboutData = [
 const About = () => {
     const [index, setIndex] = useState(0)
     return (
-        <div className="h-full bg-primaryLight/60 dark:bg-primary/30 py-32 text-center xl:text-left">
+        <div className="h-full bg-gradient-to-r dark:bg-none from-primaryLight via-primaryLight/60 to-primaryLight/10 bg-primaryLight/60 dark:bg-primary/30 py-32 text-center xl:text-left">
             <Circles />
             <motion.div
                 variants={fadeIn("right", 0.2)}
                 initial="hidden"
                 animate="show"
                 exit="hidden"
-                className="hidden xl:flex absolute bottom-0 -left-[370px]">
+                className="hidden xl:flex absolute bottom-0 -left-[300px]">
                 <Avatar />
             </motion.div>
             <div className="container mx-auto h-full flex flex-col items-center justify-start xl:flex-row gap-x-6">
@@ -195,7 +195,7 @@ const About = () => {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
-                        className="max-w-sm md:max-w-xl mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 xl:text-justify text-sm md:text-base">
+                        className="max-w-sm sm:max-w-xl mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 xl:text-justify text-sm md:text-base">
                         <strong className="font-bold">My voyage to the tech industry is rather unconventional.</strong> After earning a degree from the Department of Russian Language and Literature at Ankara University and gaining experience as a translator on various projects, both volunteer and professional, <strong className="font-bold">I reached a pivotal crossroads in my life.</strong> Fueled by my dreams, I co-founded a startup with my friends, focused on tabletop role-playing games. But it was the crafting of our official website that unveiled a new passion lying dormant within me. <strong className="font-bold">It was a revelation — a beacon guiding me to the vibrant shores of Front-End Web Development,</strong> where every line of code weaves a story just waiting to be told.
                     </motion.p>
                     <motion.div
@@ -203,7 +203,7 @@ const About = () => {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
-                        className="hidden md:flex md:max-w-xl mx-auto xl:mx-0 mb-4 xl:mb-8">
+                        className="hidden sm:flex md:max-w-xl mx-auto xl:mx-0 mb-4 xl:mb-8">
                         <div className="flex justify-center items-center flex-1 gap-x-6">
                             <div className="flex-auto w-40 border-y border-l p-3 border-black/60 dark:border-white/10 rounded-s-xl">
                                 <div className="text-2xl xl:text-4xl font-extrabold dark:text-accent text-accentLight mb-2 text-start">

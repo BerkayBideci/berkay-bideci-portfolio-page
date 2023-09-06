@@ -26,6 +26,18 @@
   @apply max-w-sm sm:max-w-max
 }
 
+.Toastify__toast--success {
+  @apply font-sora text-black dark:text-white bg-emerald-500 dark:bg-emerald-600 !important 
+}
+
+.Toastify__toast--error {
+  @apply font-sora bg-accentLight text-black dark:text-white dark:bg-accent !important 
+}
+
+.toastProgress {
+  @apply bg-black !important;
+}
+
 @layer base {
   body {
     @apply bg-secondary overflow-hidden leading-relaxed;
