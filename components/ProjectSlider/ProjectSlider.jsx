@@ -1,51 +1,80 @@
 
-import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/css"
-import "swiper/css/free-mode"
-import "swiper/css/pagination"
-import { BsArrowRight } from "react-icons/bs"
-import { Pagination } from "swiper"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import Image from "next/image";
+import {
+    SiHtml5,
+    SiCss3,
+    SiJavascript,
+    SiReact,
+    SiNextdotjs,
+    SiTailwindcss,
+    SiBootstrap,
+    SiFramer,
+    SiRedux,
+    SiFirebase,
+    SiMongodb,
+    SiGit,
+    SiI18Next
+} from "react-icons/si";
 
 const projectSlides = {
     slides: [
         {
             images: [
                 {
-                    title: "title",
-                    path: "/thumb1.jpg",
+                    title: "Givingly",
+                    path: "/Givingly.png",
+                    demo: "https://capstone-team-3-final.vercel.app/en",
+                    code: "https://github.com/202303-PRM-TR-FEW/capstone-template-team-3",
+                    description: "Givingly is a robust crowdfunding platform that connects passionate individuals and innovative projects with a community of potential backers.",
+                    technologies: [<SiNextdotjs />, <SiReact />, <SiTailwindcss />, <SiFirebase />, <SiRedux />, <SiI18Next />]
                 },
                 {
-                    title: "title",
-                    path: "/thumb2.jpg",
+                    title: "I Like To Movie Movie",
+                    path: "/ILikeToMovieMovie.png",
+                    demo: "https://202303-prm-tr-few.github.io/movie-project-aybike-berkay-medetcan/",
+                    code: "https://github.com/BerkayBideci/movie-project",
+                    description: "I Like To Movie Movie serves as a movie database, where it shows movies, their casts, ratings, trailers, related movies, genres, and additional details of them.",
+                    technologies: [<SiHtml5 />, <SiCss3 />, <SiJavascript />, <SiTailwindcss />]
                 },
                 {
-                    title: "title",
-                    path: "/thumb3.jpg",
+                    title: "Promptopia",
+                    path: "/Promptopia.png",
+                    demo: "https://promptopia-bf9v1fkpa-berkaybideci.vercel.app/",
+                    code: "https://github.com/BerkayBideci/promptopia",
+                    description: "Promptopia is an open-source AI prompting tool for modern world to discover, create, and share creative prompts.",
+                    technologies: [<SiNextdotjs />, <SiReact />, <SiTailwindcss />, <SiCss3 />, <SiMongodb />]
                 },
                 {
-                    title: "title",
-                    path: "/thumb4.jpg",
+                    title: "All Doggs Go To Heaven",
+                    path: "/AllDoggsGoToHeaven.png",
+                    demo: "https://berkaybideci.github.io/fav-artist-landing-page/",
+                    code: "https://github.com/BerkayBideci/fav-artist-landing-page",
+                    description: "All Doggs Go To Heaven serves as a landing page for my favorite artist, Snoop Doggy Dogg. The page encapsulates the essence of Snoop's unique vibe.",
+                    technologies: [<SiHtml5 />, <SiCss3 />, <SiJavascript />, <SiTailwindcss />]
                 },
             ],
         },
         {
             images: [
                 {
-                    title: "title",
-                    path: "/thumb4.jpg",
+                    title: "Meme Generator",
+                    path: "/MemeGenerator.png",
+                    demo: "https://meme-generator-seven-rho.vercel.app/",
+                    code: "https://github.com/BerkayBideci/meme-generator",
+                    description: "A web-based meme generator that empowers users to sprinkle witty captions onto iconic meme templates and then effortlessly archive them on their devices.",
+                    technologies: [<SiNextdotjs />, <SiReact />, <SiTailwindcss />]
                 },
                 {
-                    title: "title",
-                    path: "/thumb1.jpg",
-                },
-                {
-                    title: "title",
-                    path: "/thumb2.jpg",
-                },
-                {
-                    title: "title",
-                    path: "/thumb3.jpg",
+                    title: "Nominator",
+                    path: "/Nominator.png",
+                    demo: "https://omdb-exercise.vercel.app/",
+                    code: "https://github.com/BerkayBideci/omdb-exercise",
+                    description: "Nominator allows users to nominate their top five cinematic masterpieces and reveals the winner, harnessing the extensive database of the OMDb API.",
+                    technologies: [<SiNextdotjs />, <SiReact />, <SiTailwindcss />]
                 },
             ],
         },
@@ -53,51 +82,76 @@ const projectSlides = {
 };
 
 const ProjectSlider = () => {
-    return <Swiper
-        spaceBetween={10}
-        pagination={{
-            clickable: true
-        }}
-        modules={[Pagination]}
-        className="h-[280px] sm:h-[480px]"
-    >
-        {projectSlides.slides.map((slide, index) => {
-            return (
-                <SwiperSlide key={index}>
-                    <div className="grid grid-cols-2 grid-rows-2 gap-4 cursor-pointer">
-                        {slide.images.map((image, index) => {
-                            return (
-                                <div className="relative rounded-lg overflow-hidden flex items-center justify-center group"
-                                    key={index}>
-                                    <div className="flex items-center justify-center relative overflow-hidden group">
-                                        <Image
-                                            src={image.path}
-                                            width={500}
-                                            height={300}
-                                            alt="" />
-                                        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#e838cc] to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
-                                        <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
-                                            <div className="flex items-center gap-x-2 text-[13px] tracking-[0.2em]">
-                                                <div className="delay-100">
-                                                    LIVE
-                                                </div>
-                                                <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
-                                                    PROJECT
-                                                </div>
-                                                <div className="text-xl translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-200">
-                                                    <BsArrowRight />
-                                                </div>
+    return (
+        <Swiper
+            spaceBetween={10}
+            slidesPerView={1}
+            slidesPerGroup={1}
+            loop
+            breakpoints={{
+                640: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 2
+                },
+                1024: {
+                    slidesPerView: 2,
+                    slidesPerGroup: 2
+                }
+            }}
+            pagination={{
+                clickable: true,
+            }}
+            modules={[Pagination]}
+        >
+            {projectSlides.slides.map((slideGroup, groupIndex) =>
+                slideGroup.images.map((image, imageIndex) => (
+                    <SwiperSlide key={`${groupIndex}-${imageIndex}`}>
+                        <div className="cursor-pointer">
+                            <div className="relative rounded-lg overflow-hidden flex items-center justify-center group">
+                                <div className="flex items-center justify-center relative overflow-hidden group">
+                                    <Image
+                                        src={image.path}
+                                        width={500}
+                                        height={300}
+                                        alt="" />
+                                    <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#6A7A9A] to-[#2F3A5A] dark:via-[#e838cc] dark:to-[#4a22bd] opacity-0 group-hover:opacity-80 transition-all duration-700"></div>
+                                    <div className="absolute bottom-0 translate-y-full group-hover:-translate-y-10 group-hover:xl:-translate-y-20 transition-all duration-300">
+                                        <div className="text-lg translate-y-[700%] group-hover:translate-y-0 transition-all duration-300 delay-500 flex justify-center items-center tracking-[0.2em] mb-1">
+                                            <h3>{image.title}</h3>
+                                        </div>
+                                        <div className="flex items-center justify-center gap-x-2 text-[13px] tracking-[0.2em]">
+                                            <div className="delay-100">
+                                                <a href={image.demo} target="_blank" className="btn rounded-full border border-black/60 dark:border-white/50 max-w-[250px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accentLight dark:hover:border-accent group">
+                                                    <span>
+                                                        DEMO
+                                                    </span>
+                                                </a>
+                                            </div>
+                                            <div className="translate-y-[500%] group-hover:translate-y-0 transition-all duration-300 delay-150">
+                                                <a href={image.code} target="_blank" className="btn rounded-full border border-black/60 dark:border-white/50 max-w-[250px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accentLight dark:hover:border-accent group">
+                                                    <span>
+                                                        CODE
+                                                    </span>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            )
-                        })}
-                    </div>
-                </SwiperSlide>
-            )
-        })}
-    </Swiper>;
+                            </div>
+                        </div>
+                        <div className="flex flex-col justify-center items-center">
+                            <p className='text-center p-4 text-xs xl:text-base'>{image.description}</p>
+                            <div className='flex justify-center items-center gap-x-4 text-2xl'>
+                                {image.technologies?.map((tech, index) => (
+                                    <div key={index} className='hover:text-accentLight dark:hover:text-accent'>{tech}</div>
+                                ))}
+                            </div>
+                        </div>
+                    </SwiperSlide>
+                ))
+            )}
+        </Swiper>
+    )
 };
 
 export default ProjectSlider;

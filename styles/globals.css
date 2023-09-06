@@ -6,16 +6,36 @@
   transform: translateZ(0px);
 }
 
+.swiper > .swiper-pagination {
+  @apply static
+}
+
 .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
 .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-  background-color: #f13024;
+  @apply dark:bg-accent bg-accentLight
 }
 
 .swiper-button-next:after,
 .swiper-button-prev:after,
 .swiper-button-next:after,
 .swiper-rtl .swiper-button-prev:after {
-  color: #f13024;
+  @apply dark:text-accent text-accentLight
+}
+
+.swiper {
+  @apply max-w-sm sm:max-w-max
+}
+
+.Toastify__toast--success {
+  @apply font-sora text-black dark:text-white bg-emerald-500 dark:bg-emerald-600 !important 
+}
+
+.Toastify__toast--error {
+  @apply font-sora bg-accentLight text-black dark:text-white dark:bg-accent !important 
+}
+
+.toastProgress {
+  @apply bg-black !important;
 }
 
 @layer base {
@@ -28,15 +48,15 @@
   }
 
   .h1 {
-    @apply text-[35px] leading-tight md:text-[60px] md:leading-[1.3] mb-8 font-semibold;
+    @apply text-[27px] leading-tight md:text-[55px] md:leading-[1.3] mb-8 font-semibold;
   }
 
   .h2 {
-    @apply text-[35px] leading-tight md:text-[54px] md:leading-[1.3] mb-4 font-semibold;
+    @apply text-[22px] leading-tight md:text-[45px] md:leading-[1.3] mb-4 font-semibold;
   }
 
   p {
-    @apply leading-[1.8] text-white/60 font-light;
+    @apply leading-[1.8] text-black/60 dark:text-white/60 font-light;
   }
 
   .btn,
@@ -45,15 +65,15 @@
   }
 
   .input {
-    @apply w-full h-[52px] rounded-lg pl-6 capitalize;
+    @apply w-full h-[52px] rounded-lg pl-4 placeholder:capitalize;
   }
 
   .input,
   .textarea {
-    @apply bg-transparent outline-none focus:ring-1 focus:ring-accent border border-white/20 placeholder:text-white/30 placeholder:font-light;
+    @apply bg-transparent outline-none focus:border-accentLight dark:focus:border-accent border border-black/60 dark:border-white/20 placeholder:text-black/60 dark:placeholder:text-white/30 placeholder:font-normal;
   }
 
   .textarea {
-    @apply w-full h-[180px] p-6 capitalize rounded-lg resize-none;
+    @apply w-full h-[180px] p-4 placeholder:capitalize rounded-lg resize-none;
   }
 }
