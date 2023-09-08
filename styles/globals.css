@@ -79,7 +79,13 @@
 }
 
 @media (max-width: 1720px) {
-    #avatar {
+    #about-avatar {
+        display: none;
+    }
+}
+
+@media (max-width: 1320px) {
+    #home-avatar {
         display: none;
     }
 }

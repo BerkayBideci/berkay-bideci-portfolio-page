@@ -180,6 +180,7 @@ const About = () => {
                     initial="hidden"
                     animate="show"
                     exit="hidden"
+                    id="about-avatar"
                     className="hidden xl:flex absolute -bottom-0 -left-[350px]">
                     <Avatar />
                 </motion.div>
