@@ -44,7 +44,7 @@
   }
 
   .page {
-    @apply w-full h-screen overflow-hidden;
+    @apply w-full h-screen overflow-hidden pb-[80px] sm:pb-0;
   }
 
   .h1 {
@@ -76,4 +76,10 @@
   .textarea {
     @apply w-full h-[180px] p-4 placeholder:capitalize rounded-lg resize-none;
   }
+}
+
+@media (max-width: 1720px) {
+    #avatar {
+        display: none;
+    }
 }

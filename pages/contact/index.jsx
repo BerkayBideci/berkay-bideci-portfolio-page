@@ -1,5 +1,6 @@
 import Circles from "../../components/Circles/Circles"
 import Bulb from "../../components/Bulb/Bulb"
+import Header from "../../components/Header/Header"
 import { BsCaretUpFill, BsSend } from "react-icons/bs"
 import { motion } from "framer-motion"
 import { fadeIn } from "../../variants"
@@ -60,8 +61,9 @@ const Contact = () => {
 
     return (
         <div className="h-full dark:bg-primary/30 bg-gradient-to-r dark:bg-none from-primaryLight via-primaryLight/60 to-primaryLight/10 bg-primaryLight/60">
-            <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
-                <div className="flex flex-col w-full max-w-[700px]">
+            <div className="container mx-auto text-center xl:text-left h-full overflow-y-auto xl:overflow-hidden">
+                <Header />
+                <div className="h-4/5 flex flex-col justify-center items-center w-full max-w-[700px] mx-auto xl:mt-16">
                     <Circles />
                     <motion.h2
                         variants={fadeIn("down", 0.2)}
@@ -84,7 +86,7 @@ const Contact = () => {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
-                        className="flex-1 flex flex-col gap-2 xl:gap-6 w-full mx-auto"
+                        className="flex flex-col gap-2 xl:gap-6 w-full mx-auto"
                         onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex gap-x-2 xl:gap-x-6 w-full">
                             <div className="w-1/2">
@@ -124,7 +126,7 @@ const Contact = () => {
                                 </div>
                                 : null}
                         </div>
-                        <button type="submit" className="btn rounded-full border border-black/60 dark:border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accentLight dark:hover:border-accent group">
+                        <button type="submit" className="btn rounded-full border border-black/60 dark:border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accentLight dark:hover:border-accent group mb-5 sm:mb-0">
                             <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
                                 Submit
                             </span>

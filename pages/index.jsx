@@ -1,14 +1,16 @@
 import ParticlesContainer from "../components/ParticlesContainer/ParticlesContainer";
 import ProjectsBtn from "../components/ProjectsBtn/ProjectsBtn";
 import Avatar from "../components/Avatar/Avatar";
+import Header from "../components/Header/Header";
 import { easeInOut, motion } from "framer-motion";
 import { fadeIn } from "../variants";
 
 export default function Home() {
     return (
         <div className="bg-primaryLight xl:bg-primaryLight/10 dark:bg-primary/60 h-full">
-            <div className="w-full h-full dark:bg-gradient-to-r dark:from-primary/10 dark:via-black/30 dark:to-black/10 xl:bg-gradient-to-r from-primaryLight from-[37%] via-primaryLight/60 to-primaryLight/10">
-                <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
+            <div className="w-full h-full dark:bg-gradient-to-r dark:from-primary/10 dark:via-black/30 dark:to-black/10 xl:bg-gradient-to-r from-primaryLight from-[37%] via-primaryLight/60 to-primaryLight/10 overflow-y-auto xl:overflow-hidden">
+                <Header />
+                <div className="text-center flex flex-col justify-center xl:text-left h-4/5 container mx-auto pb-5 sm:pb-0 xl:mt-16">
                     <motion.h1
                         variants={fadeIn("down", 0.2)}
                         initial="hidden"

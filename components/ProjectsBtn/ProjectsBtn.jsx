@@ -10,7 +10,7 @@ const ProjectsBtn = () => {
         <div className="mx-auto xl:mx-0 z-10">
             <Link
                 href="/projects"
-                className="relative w-[185px] h-[185px] flex justify-center items-center dark:bg-circleStar bg-circleStarLight bg-cover bg-center bg-no-repeat group"
+                className="relative w-[185px] h-[185px] flex justify-center items-center dark:bg-circleStar bg-circleStarLight bg-cover bg-center bg-no-repeat group mb-5 sm:mb-0"
             >
                 <Image
                     src={themeContext.isDarkTheme ? "/rounded-text.png" : "/rounded-text-black.png"}

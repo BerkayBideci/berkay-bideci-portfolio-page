@@ -19,6 +19,8 @@ import {
     SiGit,
     SiI18Next
 } from "react-icons/si";
+import { motion } from "framer-motion"
+import { fadeIn } from "../../variants"
 
 const projectSlides = {
     slides: [
@@ -172,7 +174,12 @@ const ProjectSlider = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="flex flex-col justify-center items-center">
+                        <motion.div
+                            variants={fadeIn("left", 0.5)}
+                            initial="hidden"
+                            animate="show"
+                            exit="hidden"
+                            className="flex flex-col justify-center items-center">
                             <p className='text-center p-4 text-xs xl:text-base'>{image.description}</p>
                             <div className='flex justify-center items-center gap-x-4 text-2xl'>
                                 {image.technologies?.map((techName, index) => {
@@ -184,7 +191,7 @@ const ProjectSlider = () => {
                                     );
                                 })}
                             </div>
-                        </div>
+                        </motion.div>
                     </SwiperSlide>
                 ))
             )}
