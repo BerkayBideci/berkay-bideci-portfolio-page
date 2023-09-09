@@ -64,7 +64,7 @@ const Contact = () => {
                 <div className="flex flex-col w-full max-w-[700px]">
                     <Circles />
                     <motion.h2
-                        variants={fadeIn("down", 0.2)}
+                        variants={fadeIn("down", 0.5)}
                         initial="hidden"
                         animate="show"
                         exit="hidden"
@@ -72,7 +72,7 @@ const Contact = () => {
                         Contact me<span className="text-accentLight dark:text-accent">.</span>
                     </motion.h2>
                     <motion.p
-                        variants={fadeIn("up", 0.3)}
+                        variants={fadeIn("up", 0.6)}
                         initial="hidden"
                         animate="show"
                         exit="hidden"
@@ -80,7 +80,7 @@ const Contact = () => {
                         Contact me directly at <a href="mailto:berkaybideci@gmail.com" className="underline font-medium">berkaybideci@gmail.com</a> or through this form.
                     </motion.p>
                     <motion.form
-                        variants={fadeIn("up", 0.4)}
+                        variants={fadeIn("up", 0.7)}
                         initial="hidden"
                         animate="show"
                         exit="hidden"

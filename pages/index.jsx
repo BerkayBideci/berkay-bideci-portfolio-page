@@ -8,7 +8,7 @@ export default function Home() {
     return (
         <div className="bg-primaryLight xl:bg-primaryLight/10 dark:bg-primary/60 min-h-screen">
             <div className="w-full min-h-screen dark:bg-gradient-to-r dark:from-primary/10 dark:via-black/30 dark:to-black/10 xl:bg-gradient-to-r from-primaryLight from-[37%] via-primaryLight/60 to-primaryLight/10 overflow-y-auto overflow-x-hidden xl:overflow-hidden flex justify-center items-center">
-                <div className="text-center sm:flex flex-col justify-center xl:pt-40 xl:text-left container mx-auto max-h-[calc(100vh-14rem)] sm:max-h-none overflow-y-auto">
+                <div className="text-center sm:flex flex-col justify-center xl:pt-40 xl:text-left container mx-auto max-h-[calc(100vh-14rem)] sm:max-h-none overflow-y-auto z-20">
                     <motion.h1
                         variants={fadeIn("down", 0.2)}
                         initial="hidden"
