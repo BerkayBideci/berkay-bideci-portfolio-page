@@ -68,6 +68,7 @@ const Contact = () => {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
+                        key="contact-header"
                         className="h2 text-center mb-2 xl:mb-6">
                         Contact me<span className="text-accentLight dark:text-accent">.</span>
                     </motion.h2>
@@ -76,6 +77,7 @@ const Contact = () => {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
+                        key="contact-paragraph"
                         className="text-center text-sm md:text-base mb-4 xl:mb-6">
                         Contact me directly at <a href="mailto:berkaybideci@gmail.com" className="underline font-medium">berkaybideci@gmail.com</a> or through this form.
                     </motion.p>
@@ -84,6 +86,7 @@ const Contact = () => {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
+                        key="contact-form"
                         className="flex-1 flex flex-col gap-2 xl:gap-6 w-full mx-auto"
                         onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex gap-x-2 xl:gap-x-6 w-full">
@@ -124,7 +127,7 @@ const Contact = () => {
                                 </div>
                                 : null}
                         </div>
-                        <button type="submit" className="btn rounded-full border border-black/60 dark:border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accentLight dark:hover:border-accent group">
+                        <button type="submit" className="btn rounded-full border border-black/60 dark:border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accentLight dark:hover:border-accent group relative">
                             <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
                                 Submit
                             </span>

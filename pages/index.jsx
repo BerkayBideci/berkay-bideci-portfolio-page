@@ -14,6 +14,7 @@ export default function Home() {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
+                        key="home-header"
                         className="h1 xl:max-w-xl z-10"
                     >
                         Transforming Vision <br /> Into{" "}
@@ -24,6 +25,7 @@ export default function Home() {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
+                        key="home-paragraph"
                         className="max-w-sm md:max-w-xl mx-auto xl:mx-0 mb-2 xl:mb-16 xl:text-justify text-sm md:text-base z-10"
                     >
                         Hello, I&apos;m <strong className="font-bold">Berkay</strong>, a <strong className="font-bold">Front-End Web Developer</strong> with a background in game design, translation, and editing. Proficient in a diverse range of technologies, including <strong className="font-bold">HTML, CSS, JavaScript, Tailwind CSS, Bootstrap, React.js, Next.js, and Redux Toolkit</strong>. Possess strong attention to detail, and a dedication to providing high-quality web development solutions.
@@ -36,6 +38,7 @@ export default function Home() {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
+                        key="home-button"
                         className="hidden xl:flex"
                     >
                         <ProjectsBtn />
@@ -51,6 +54,7 @@ export default function Home() {
                     animate="show"
                     exit="hidden"
                     id="home-avatar"
+                    key="home-avatar"
                     transition={{ duration: 1, ease: easeInOut }}
                     className="w-full h-full max-w-[737px] max-h-[678px] absolute -bottom-32 lg:-bottom-6 lg:right-[8%]"
                 >

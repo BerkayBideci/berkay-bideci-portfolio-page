@@ -178,6 +178,7 @@ const About = () => {
                 animate="show"
                 exit="hidden"
                 id="about-avatar"
+                key="about-avatar"
                 className="hidden xl:flex absolute -bottom-0 -left-[350px]">
                 <Avatar />
             </motion.div>
@@ -188,6 +189,7 @@ const About = () => {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
+                        key="about-header"
                         className="h2">
                         Impressive designs are <br /> born from unique <span className="text-accentLight dark:text-accent">stories</span>
                     </motion.h2>
@@ -196,6 +198,7 @@ const About = () => {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
+                        key="about-paragraph"
                         className="max-w-sm sm:max-w-xl mx-auto xl:mx-0 mb-2 xl:mb-12 px-2 xl:px-0 xl:text-justify text-sm md:text-base">
                         <strong className="font-bold">My voyage to the tech industry is rather unconventional.</strong> After earning a degree from the Department of Russian Language and Literature at Ankara University and gaining experience as a translator on various projects, both volunteer and professional, <strong className="font-bold">I reached a pivotal crossroads in my life.</strong> Fueled by my dreams, I co-founded a startup with my friends, focused on tabletop role-playing games. But it was the crafting of our official website that unveiled a new passion lying dormant within me. <strong className="font-bold">It was a revelation — a beacon guiding me to the vibrant shores of Front-End Web Development,</strong> where every line of code weaves a story just waiting to be told.
                     </motion.p>
@@ -204,6 +207,7 @@ const About = () => {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
+                        key="about-counter"
                         className="hidden sm:flex md:max-w-xl mx-auto xl:mx-0 mb-4 xl:mb-8">
                         <div className="flex justify-center items-center flex-1 gap-x-6">
                             <div className="flex-auto w-40 border-y border-l p-3 border-black/60 dark:border-white/10 rounded-s-xl">
@@ -246,6 +250,7 @@ const About = () => {
                     initial="hidden"
                     animate="show"
                     exit="hidden"
+                    key="about-data"
                     className="flex flex-col w-full xl:max-w-[48%] xl:h-[530px]">
                     <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
                         {aboutData.map((item, itemIndex) => {
