@@ -59,8 +59,8 @@ const Contact = () => {
     }
 
     return (
-        <div className="h-full dark:bg-primary/30 bg-gradient-to-r dark:bg-none from-primaryLight via-primaryLight/60 to-primaryLight/10 bg-primaryLight/60">
-            <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
+        <div className="min-h-screen dark:bg-primary/30 bg-gradient-to-r dark:bg-none from-primaryLight via-primaryLight/60 to-primaryLight/10 bg-primaryLight/60 overflow-y-auto overflow-x-hidden xl:overflow-hidden flex items-center justify-center">
+            <div className="container mx-auto max-h-[calc(100vh-14rem)] sm:max-h-none overflow-y-auto sm:py-32 text-center xl:text-left sm:flex items-center justify-center">
                 <div className="flex flex-col w-full max-w-[700px]">
                     <Circles />
                     <motion.h2

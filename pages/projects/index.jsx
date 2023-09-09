@@ -6,9 +6,9 @@ import { fadeIn } from "../../variants"
 
 const Projects = () => {
     return (
-        <div className="h-full dark:bg-primary/30 py-36 flex sm:items-center justify-center bg-gradient-to-r dark:bg-none from-primaryLight via-primaryLight/60 to-primaryLight/10 bg-primaryLight/60">
+        <div className="min-h-screen dark:bg-primary/30 flex items-center justify-center bg-gradient-to-r dark:bg-none from-primaryLight via-primaryLight/60 to-primaryLight/10 bg-primaryLight/60 overflow-y-auto overflow-x-hidden xl:overflow-hidden">
             <Circles />
-            <div className="container mx-auto">
+            <div className="container mx-auto max-h-[calc(100vh-14rem)] sm:max-h-none overflow-y-auto">
                 <div className="flex flex-col xl:flex-row gap-x-8">
                     <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0">
                         <motion.h2
