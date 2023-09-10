@@ -8,7 +8,13 @@ const Projects = () => {
     return (
         <div className="min-h-screen dark:bg-primary/30 flex items-center justify-center bg-gradient-to-r dark:bg-none from-primaryLight via-primaryLight/60 to-primaryLight/10 bg-primaryLight/60 overflow-y-auto overflow-x-hidden xl:overflow-hidden">
             <Circles />
-            <div className="container mx-auto max-h-[calc(100vh-14rem)] sm:max-h-none overflow-y-auto">
+            <motion.div
+                variants={fadeIn("up", 0.1)}
+                initial="hidden"
+                animate="show"
+                exit="hidden"
+                key="projects"
+                className="container mx-auto max-h-[calc(100vh-14rem)] sm:max-h-none overflow-y-auto">
                 <div className="flex flex-col xl:flex-row gap-x-8">
                     <div className="text-center flex xl:w-[30vw] flex-col lg:text-left mb-4 xl:mb-0">
                         <motion.h2
@@ -43,7 +49,7 @@ const Projects = () => {
                         <ProjectSlider />
                     </motion.div>
                 </div>
-            </div>
+            </motion.div>
             <Bulb />
         </div>
     )
