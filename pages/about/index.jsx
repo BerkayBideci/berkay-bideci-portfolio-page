@@ -170,23 +170,26 @@ const aboutData = [
 const About = () => {
     const [index, setIndex] = useState(0)
     return (
-        <div className="h-full bg-gradient-to-r dark:bg-none from-primaryLight via-primaryLight/60 to-primaryLight/10 bg-primaryLight/60 dark:bg-primary/30 py-32 text-center xl:text-left">
+        <div className="min-h-screen bg-gradient-to-r dark:bg-none from-primaryLight via-primaryLight/60 to-primaryLight/10 bg-primaryLight/60 dark:bg-primary/30 text-center xl:text-left overflow-y-auto overflow-x-hidden xl:overflow-hidden flex items-center justify-center">
             <Circles />
             <motion.div
                 variants={fadeIn("right", 0.2)}
                 initial="hidden"
                 animate="show"
                 exit="hidden"
+                id="about-avatar"
+                key="about-avatar"
                 className="hidden xl:flex absolute -bottom-0 -left-[350px]">
                 <Avatar />
             </motion.div>
-            <div className="container mx-auto h-full flex flex-col items-center justify-start xl:flex-row gap-x-6">
-                <div className="flex-1 flex flex-col justify-center">
+            <div className="container mx-auto max-h-[calc(100vh-14rem)] sm:max-h-none overflow-y-auto sm:flex flex-col items-center justify-center xl:flex-row gap-x-6">
+                <div className="xl:flex-1 flex flex-col justify-center">
                     <motion.h2
                         variants={fadeIn("right", 0.3)}
                         initial="hidden"
                         animate="show"
                         exit="hidden"
+                        key="about-header"
                         className="h2">
                         Impressive designs are <br /> born from unique <span className="text-accentLight dark:text-accent">stories</span>
                     </motion.h2>
@@ -195,7 +198,8 @@ const About = () => {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
-                        className="max-w-sm sm:max-w-xl mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 xl:text-justify text-sm md:text-base">
+                        key="about-paragraph"
+                        className="max-w-sm sm:max-w-xl mx-auto xl:mx-0 mb-2 xl:mb-12 px-2 xl:px-0 xl:text-justify text-sm md:text-base">
                         <strong className="font-bold">My voyage to the tech industry is rather unconventional.</strong> After earning a degree from the Department of Russian Language and Literature at Ankara University and gaining experience as a translator on various projects, both volunteer and professional, <strong className="font-bold">I reached a pivotal crossroads in my life.</strong> Fueled by my dreams, I co-founded a startup with my friends, focused on tabletop role-playing games. But it was the crafting of our official website that unveiled a new passion lying dormant within me. <strong className="font-bold">It was a revelation — a beacon guiding me to the vibrant shores of Front-End Web Development,</strong> where every line of code weaves a story just waiting to be told.
                     </motion.p>
                     <motion.div
@@ -203,6 +207,7 @@ const About = () => {
                         initial="hidden"
                         animate="show"
                         exit="hidden"
+                        key="about-counter"
                         className="hidden sm:flex md:max-w-xl mx-auto xl:mx-0 mb-4 xl:mb-8">
                         <div className="flex justify-center items-center flex-1 gap-x-6">
                             <div className="flex-auto w-40 border-y border-l p-3 border-black/60 dark:border-white/10 rounded-s-xl">
@@ -223,7 +228,7 @@ const About = () => {
                             </div>
                             <div className="flex-auto w-40 border-y border-r p-3 border-black/60 dark:border-white/10 rounded-e-xl">
                                 <div className="text-2xl xl:text-4xl font-extrabold dark:text-accent text-accentLight mb-2 text-end">
-                                    <CountUp start={0} end={20} duration={5} /> +
+                                    <CountUp start={0} end={10} duration={5} /> +
                                 </div>
                                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] text-end">
                                     Finished <br />projects
@@ -245,7 +250,8 @@ const About = () => {
                     initial="hidden"
                     animate="show"
                     exit="hidden"
-                    className="flex flex-col w-full xl:max-w-[48%] h-[530px]">
+                    key="about-data"
+                    className="flex flex-col w-full xl:max-w-[48%] xl:h-[530px]">
                     <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
                         {aboutData.map((item, itemIndex) => {
                             if (item.title !== "Resume") {
@@ -282,7 +288,7 @@ const About = () => {
                                 )
                             } else {
                                 return (
-                                    <div key={itemIndex} className="flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center justify-center text-black/60 dark:text-white/60">
+                                    <div key={itemIndex} className="xl:flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center justify-center text-black/60 dark:text-white/60">
                                         <div
                                             className="font-light mb-2 md:mb-0 whitespace-nowrap">
                                             {item.title}

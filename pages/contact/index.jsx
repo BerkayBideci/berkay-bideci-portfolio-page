@@ -59,31 +59,34 @@ const Contact = () => {
     }
 
     return (
-        <div className="h-full dark:bg-primary/30 bg-gradient-to-r dark:bg-none from-primaryLight via-primaryLight/60 to-primaryLight/10 bg-primaryLight/60">
-            <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
+        <div className="min-h-screen dark:bg-primary/30 bg-gradient-to-r dark:bg-none from-primaryLight via-primaryLight/60 to-primaryLight/10 bg-primaryLight/60 overflow-y-auto overflow-x-hidden xl:overflow-hidden flex items-center justify-center">
+            <div className="container mx-auto max-h-[calc(100vh-14rem)] sm:max-h-none overflow-y-auto sm:py-32 text-center xl:text-left sm:flex items-center justify-center">
                 <div className="flex flex-col w-full max-w-[700px]">
                     <Circles />
                     <motion.h2
-                        variants={fadeIn("down", 0.2)}
+                        variants={fadeIn("down", 0.5)}
                         initial="hidden"
                         animate="show"
                         exit="hidden"
+                        key="contact-header"
                         className="h2 text-center mb-2 xl:mb-6">
                         Contact me<span className="text-accentLight dark:text-accent">.</span>
                     </motion.h2>
                     <motion.p
-                        variants={fadeIn("up", 0.3)}
+                        variants={fadeIn("up", 0.6)}
                         initial="hidden"
                         animate="show"
                         exit="hidden"
+                        key="contact-paragraph"
                         className="text-center text-sm md:text-base mb-4 xl:mb-6">
                         Contact me directly at <a href="mailto:berkaybideci@gmail.com" className="underline font-medium">berkaybideci@gmail.com</a> or through this form.
                     </motion.p>
                     <motion.form
-                        variants={fadeIn("up", 0.4)}
+                        variants={fadeIn("up", 0.7)}
                         initial="hidden"
                         animate="show"
                         exit="hidden"
+                        key="contact-form"
                         className="flex-1 flex flex-col gap-2 xl:gap-6 w-full mx-auto"
                         onSubmit={handleSubmit(onSubmit)}>
                         <div className="flex gap-x-2 xl:gap-x-6 w-full">
@@ -124,7 +127,7 @@ const Contact = () => {
                                 </div>
                                 : null}
                         </div>
-                        <button type="submit" className="btn rounded-full border border-black/60 dark:border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accentLight dark:hover:border-accent group">
+                        <button type="submit" className="btn rounded-full border border-black/60 dark:border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accentLight dark:hover:border-accent group relative">
                             <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500">
                                 Submit
                             </span>

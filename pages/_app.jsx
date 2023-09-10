@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }) {
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={router.route}
-                        className="h-full"
+                        className="min-h-screen"
                     >
                         <Transition />
                         <Component {...pageProps} />
