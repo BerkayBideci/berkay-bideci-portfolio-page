@@ -12,7 +12,7 @@ const Projects = () => {
                 variants={fadeIn("up", 0.1)}
                 initial="hidden"
                 animate="show"
-                exit="hidden"
+                exit="exit"
                 key="projects"
                 className="container mx-auto max-h-[calc(100vh-14rem)] sm:max-h-none overflow-y-auto">
                 <div className="flex flex-col xl:flex-row gap-x-8">

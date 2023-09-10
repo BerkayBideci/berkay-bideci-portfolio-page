@@ -22,5 +22,12 @@ export const fadeIn = (direction, delay) => {
                 ease: [0.25, 0.25, 0.25, 0.75],
             },
         },
+        exit: {
+            opacity: 0,
+            scale: 0.5,
+            transition: {
+                duration: 0.8
+            }
+        }
     };
 };
