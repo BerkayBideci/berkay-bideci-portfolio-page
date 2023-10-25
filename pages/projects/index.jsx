@@ -45,7 +45,8 @@ const Projects = () => {
             animate="show"
             exit="hidden"
             key="projects-slider"
-            className="xl:max-w-[65%]">
+            className="xl:max-w-[65%]"
+          >
             <ProjectSlider />
           </motion.div>
         </div>
