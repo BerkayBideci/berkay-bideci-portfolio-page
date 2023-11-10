@@ -39,15 +39,11 @@ const Projects = () => {
               and a relentless pursuit of excellence.
             </motion.p>
           </div>
-          <motion.div
-            variants={fadeIn("down", 0.6)}
-            initial="hidden"
-            animate="show"
-            key="projects-slider"
+          <div
             className="xl:max-w-[65%]"
           >
             <ProjectSlider />
-          </motion.div>
+          </div>
         </div>
       </div>
       <Bulb />
