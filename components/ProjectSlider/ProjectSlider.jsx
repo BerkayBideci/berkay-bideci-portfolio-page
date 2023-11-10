@@ -51,6 +51,19 @@ const projectSlides = {
           technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
         },
         {
+          title: "Jotion",
+          path: "/Jotion.png",
+          demo: "https://notion-clone-red.vercel.app/",
+          code: "https://github.com/BerkayBideci/notion-clone",
+          description:
+            "Jotion is an ambitious project that mirrors the core functionalities and user-friendly interface of Notion, allowing users to create, organize, and publish notes.",
+          technologies: [
+            "Next.js",
+            "React.js",
+            "Tailwind CSS",
+          ],
+        },
+        {
           title: "3D Customizer",
           path: "/3DCustomizer.png",
           demo: "https://stunning-taiyaki-628a19.netlify.app/",
@@ -65,6 +78,10 @@ const projectSlides = {
             "Tailwind CSS",
           ],
         },
+      ],
+    },
+    {
+      images: [
         {
           title: "All Doggs Go To Heaven",
           path: "/AllDoggsGoToHeaven.png",
@@ -73,25 +90,6 @@ const projectSlides = {
           description:
             "All Doggs Go To Heaven serves as a landing page for my favorite artist, Snoop Doggy Dogg. The page encapsulates the essence of Snoop's unique vibe.",
           technologies: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
-        },
-      ],
-    },
-    {
-      images: [
-        {
-          title: "Promptopia",
-          path: "/Promptopia.png",
-          demo: "https://promptopia-bf9v1fkpa-berkaybideci.vercel.app/",
-          code: "https://github.com/BerkayBideci/promptopia",
-          description:
-            "Promptopia is an open-source AI prompting tool for modern world to discover, create, and share creative prompts.",
-          technologies: [
-            "Next.js",
-            "React.js",
-            "Tailwind CSS",
-            "CSS",
-            "MongoDB",
-          ],
         },
         {
           title: "Meme Generator",

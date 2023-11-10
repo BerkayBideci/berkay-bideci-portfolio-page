@@ -43,7 +43,6 @@ const Projects = () => {
             variants={fadeIn("down", 0.6)}
             initial="hidden"
             animate="show"
-            exit="hidden"
             key="projects-slider"
             className="xl:max-w-[65%]"
           >
